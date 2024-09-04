@@ -185,15 +185,15 @@ rl.close()
         setTimeout(async () => {
             let codigo = await conn.requestPairingCode(numeroTelefono)
             codigo = codigo?.match(/.{1,4}/g)?.join("-") || codigo
-            console.log(chalk.yellow('[ ℹ️ ] introduce el código de emparejamiento en WhatsApp.'));
-            console.log(chalk.black(chalk.bgGreen(`Su código de emparejamiento: `)), chalk.black(chalk.white(codigo)))
+            console.log(chalk.yellow('[ ℹ️ ] inserisci il codice di abbinamento su whatsapp.'));
+            console.log(chalk.black(chalk.bgGreen(`il suo codice di abbinamento: `)), chalk.black(chalk.white(codigo)))
         }, 3000)
 }}
 }
 
 conn.isInit = false;
 conn.well = false;
-conn.logger.info(`[ ℹ️ ] Cargando...\n`);
+conn.logger.info(`[ ℹ️ ] Caricamento...\n`);
 
 if (!opts['test']) {
   if (global.db) {
@@ -352,7 +352,7 @@ if (connection === 'close') {
         conn.logger.error(`[ ⚠ ] Conexión reemplazada, se ha abierto otra nueva sesión. Por favor, cierra la sesión actual primero.`);
         //process.exit();
     } else if (reason === DisconnectReason.loggedOut) {
-        conn.logger.error(`[ ⚠ ] Conexion cerrada, por favor elimina la carpeta ${global.authFile} y escanea nuevamente.`);
+        conn.logger.error(`[ ⚠ ] connessione chiusa, per favore elimina la cartella ${global.authFile} e riprova di nuovo.`);
         //process.exit();
     } else if (reason === DisconnectReason.restartRequired) {
         conn.logger.info(`[ ⚠ ] Reinicio necesario, reinicie el servidor si presenta algún problema.`);
